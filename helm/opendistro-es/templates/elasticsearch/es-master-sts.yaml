@@ -327,7 +327,7 @@ spec:
       name: data
       annotations:
       {{- range $key, $value := .Values.elasticsearch.master.persistence.annotations }}
-        {{ $key }}: {{ $value }}
+        {{ $key }}: {{ $value | quote }}
       {{- end }}
     spec:
       accessModes:
